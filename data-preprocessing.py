@@ -8,5 +8,6 @@ for i in range(15):
     locals()[headers[i]]=[]
     for row in reader:
         locals()[headers[i]].append(row[i])
-print(province_zipCode)
-csvFile.close()
+        #print(locals()[headers[i]])
+print(locals()[headers[0]])
+#csvFile.close()

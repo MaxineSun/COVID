@@ -1,3 +1,5 @@
-a = [1,1,4,2]
-a.append(3)
-print(a)
+a = [e,b,c,d]
+for i in range(4):
+    name = a[i]
+    locals()[a[i]]=i
+print(locals()['c'])
