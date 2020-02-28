@@ -10,4 +10,4 @@ for i in range(15):
         locals()[headers[i]].append(row[i])
         #print(locals()[headers[i]])
 print(locals()[headers[0]])
-#csvFile.close()
+csvFile.close()
