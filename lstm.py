@@ -1,10 +1,9 @@
-# 导入模块
 import numpy as np
 import matplotlib.pyplot as plt
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import LSTM
-import  pandas as pd
+import pandas as pd
 from keras.models import Sequential, load_model
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import MinMaxScaler
@@ -12,7 +11,6 @@ from sklearn.preprocessing import MinMaxScaler
 # 读取数据
 dataframe = pd.read_csv('SARS.csv',usecols=[1])
 
-# 数据预处理 处理其中为0缺失的数据
 for i in range(dataframe['total'].shape[0]):
     if dataframe['total'][i] == 0:
         j=i+1
@@ -65,7 +63,7 @@ plt.show()
 
 
 # 读取新型冠状病毒数据进行测试
-dataframe = pd.read_csv('data.csv',usecols=[1])
+dataframe = pd.read_csv('Shenzhen.csv',usecols=[1])
 dataset = dataframe.values
 dataset = dataset.astype('float32')
 #归一化
