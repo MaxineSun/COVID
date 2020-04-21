@@ -34,7 +34,7 @@ def create(dataset, timestep ):
         dataY.append(dataset[i + timestep ])
     return np.array(dataX),np.array(dataY)
 #训练数据太少 timestep 取2
-timestep  = 3
+timestep  = 5
 trainX,trainY  = create(dataset,timestep )
 
 trainX = np.reshape(trainX, (trainX.shape[0], trainX.shape[1], 1))
@@ -63,7 +63,7 @@ datasetI = scaler.fit_transform(datasetI)
 datasetS = scaler.fit_transform(datasetS)
 datasetU = scaler.fit_transform(datasetU)
 
-testdataI,TEXTYI  = create(datasetI,3)
+testdataI,TEXTYI  = create(datasetI,5)
 resI= model.predict(testdataI)
 # 结果反归一化
 resI = scaler.inverse_transform(resI)
@@ -71,7 +71,7 @@ TEXTYI = scaler.inverse_transform(TEXTYI)
 scoreI = r2_score(TEXTYI, resI, multioutput='raw_values')
 print(scoreI)
 
-testdataS,TEXTYS  = create(datasetS,3)
+testdataS,TEXTYS  = create(datasetS,5)
 resS= model.predict(testdataS)
 # 结果反归一化
 resS = scaler.inverse_transform(resS)
@@ -79,7 +79,7 @@ TEXTYS = scaler.inverse_transform(TEXTYS)
 scoreS = r2_score(TEXTYS, resS, multioutput='raw_values')
 print(scoreS)
 
-testdataU,TEXTYU  = create(datasetU,3)
+testdataU,TEXTYU  = create(datasetU,5)
 resU= model.predict(testdataU)
 # 结果反归一化
 resU = scaler.inverse_transform(resU)
